@@ -13,4 +13,82 @@
     width: 100px;
     height: 100px;
     border-radius: 5px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 30px; 
+    color: #776e65; 
+    font-weight: bold; 
+    font-family: 'Arial', sans-serif; 
+}
+
+@keyframes moveAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cell.animate {
+    animation: moveAnimation 0.2s ease;
+}
+
+.number-2 {
+    background-color: #eee4da;
+    color: #776e65;
+}
+
+.number-4 {
+    background-color: #ede0c8;
+    color: #776e65;
+}
+
+.number-8 {
+    background-color: #f2b179;
+    color: #f9f6f2;
+}
+
+.number-16 {
+    background-color: #f59563;
+    color: #f9f6f2;
+}
+
+.number-32 {
+    background-color: #f67c5f;
+    color: #f9f6f2;
+}
+
+.number-64 {
+    background-color: #f65e3b;
+    color: #f9f6f2;
+}
+
+.number-128 {
+    background-color: #edcf72;
+    color: #f9f6f2;
+}
+
+.number-256 {
+    background-color: #edcc61;
+    color: #f9f6f2;
+}
+
+.number-512 {
+    background-color: #edc850;
+    color: #f9f6f2;
+}
+
+.number-1024 {
+    background-color: #edc53f;
+    color: #f9f6f2;
+}
+
+.number-2048 {
+    background-color: #edc22e;
+    color: #f9f6f2;
 }
