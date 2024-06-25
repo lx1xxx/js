@@ -1,4 +1,13 @@
-let score = 0;
+let score = {
+    inner_value: 0,
+    get value() {
+        return this.inner_value;
+    },
+    set value(value) {
+        this.inner_value = value;
+        document.getElementById('score').innerHTML = value;
+    }
+}
 let total_numbers = 0;
 let gameOver = false;
 let squares;
@@ -26,7 +35,7 @@ function moveLeft() {
         while (row.length > 0) {
             if (row[0] === row[1] && row[0] <= 2048) {
                 let sum = parseInt(row[0]) + parseInt(row[1]);
-                score += sum;
+                score.value += sum;
                 row.shift();
                 row.shift();
                 newrow.push(sum);
@@ -61,7 +70,7 @@ function moveRight() {
         while (row.length > 0) {
             if (row[0] === row[1] && row[0] <= 2048) {
                 let sum = parseInt(row[0]) + parseInt(row[1]);
-                score += sum;
+                score.value += sum;
                 row.shift();
                 row.shift();
                 newrow.push(sum);
@@ -96,7 +105,7 @@ function moveUp() {
         while (column.length > 0) {
             if (column[0] === column[1] && column[0] <= 2048) {
                 let sum = parseInt(column[0]) + parseInt(column[1]);
-                score += sum;
+                score.value += sum;
                 column.shift();
                 column.shift();
                 newcolumn.push(sum);
@@ -131,7 +140,7 @@ function moveDown() {
         while (column.length > 0) {
             if (column[0] === column[1] && column[0] <= 2048) {
                 let sum = parseInt(column[0]) + parseInt(column[1]);
-                score += sum;
+                score.value += sum;
                 column.shift();
                 column.shift();
                 newcolumn.push(sum);
@@ -156,31 +165,44 @@ function moveDown() {
 
 // 绑定键盘操作
 function control(e) {
-    if (e.keyCode === 39) {
+    if (e.keyCode === 39 || e.keyCode === 68 || e.keyCode === 76) {
         moveRight();
     }
-    if (e.keyCode === 37) {
+    if (e.keyCode === 37 || e.keyCode === 65 || e.keyCode === 72) {
         moveLeft();
     }
-    if (e.keyCode === 38) {
+    if (e.keyCode === 38 || e.keyCode === 87 || e.keyCode === 75) {
         moveUp();
     }
-    if (e.keyCode === 40) {
+    if (e.keyCode === 40 || e.keyCode === 83 || e.keyCode === 74) {
         moveDown();
     }
+}
+
+function createBoard() {
+    generate();
+    generate();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     squares = document.querySelectorAll('.cell');
     // 初始化游戏板
-    function createBoard() {
-        generate();
-        generate();
-    }
+    
     document.addEventListener('keyup', control);
-
+    document.getElementById('restart-button').addEventListener('click', Init);
     createBoard();
 });
+
+function Init() {
+    score.value = 0;
+    total_numbers = 0;
+    gameOver = false;
+    squares.forEach(square => {
+        square.innerHTML = "";
+        square.classList.remove('number-2', 'number-4', 'number-8', 'number-16', 'number-32', 'number-64', 'number-128', 'number-256', 'number-512', 'number-1024', 'number-2048', 'animate');
+    });
+    createBoard();
+}
 
 function check() {
     if (total_numbers >= 16) {
@@ -188,7 +210,7 @@ function check() {
         for (let i = 0; i < 4; i++) {
             for (let j = 0; j < 4; j++) {
                 let current = squares[i * 4 + j].innerHTML;
-                let right = squares[i * 4 + j + 1] ? squares[i * 4 + j + 1].innerHTML : null;
+                let right = j < 3 ? (squares[i * 4 + j + 1] ? squares[i * 4 + j + 1].innerHTML : null) : null;
                 let down = squares[i * 4 + j + 4] ? squares[i * 4 + j + 4].innerHTML : null;
                 if (current === right || current === down) {
                     gameOver = false;
@@ -197,7 +219,7 @@ function check() {
             }
         }
         if (gameOver) {
-            alert('Game Over! Your score is ' + score);
+            alert('Game Over! Your score is ' + score.value);
         }
     }
 }
