@@ -9,9 +9,11 @@ body {
 
 .game-container {
     position: relative;
+    height: 100vh;
 }
 
 canvas {
+    height: 100vh;
     background-color: #70c5ce;
     border: 1px solid #000;
 }
