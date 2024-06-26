@@ -26,11 +26,15 @@ canvas {
 }
 
 #startButton {
+    width: 87px;
+    height: 22px;
+    transform: scale(2) translateX(-50%);
+    background-image: url('assets/SPRITES.png');
+    background-position: -146px -220px;
+    /* cursor: pointer; */
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px 20px;
-    font-size: 18px;
     display: none;
+    top : 60%;
+    left: 50%;
+    margin-left: 43.5px;
 }
