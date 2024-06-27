@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>五子棋小游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="controls">
+        <button onclick="startGame('twoPlayers')">双人模式</button>
+        <button onclick="startGame('vsComputer')">人机对战模式</button>
+    </div>
+    <canvas id="gomoku" width="600" height="600" style="display:none;"></canvas>
+    <div id="status"></div>
+    <script src="script.js"></script>
+</body>
+</html>

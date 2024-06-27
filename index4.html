@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卑惊大学校内常用网站</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+    <header>
+        <h1>卑惊大学校内常用网站</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./index1.html">休闲娱乐</a></li>
+            <li><a href="./index2.html">上课作业</a></li>
+            <li><a href="./index3.html">信息获取</a></li>
+            <li><a href="./index4.html"  id="now">todo list</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>To-Do List</h2>
+        <div class="input-container">
+            <input type="text" id="taskInput" placeholder="Enter a new task">
+            <button id="addTaskButton">Add Task</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+    <script src="todolist.js"></script>
+</body>
+</html>

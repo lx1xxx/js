@@ -1,0 +1,110 @@
+/* 全局样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #ffffff;
+}
+
+/* 包装容器 */
+.wrapper {
+    flex: 1;
+}
+
+/* 页眉样式 */
+header {
+    background-color: #861d1d;
+    color: white;
+    line-height: 0.9; 
+    padding: 1em 0;
+    text-align: center;
+    height: 70px;
+    background-image: url('img/goodlogo.png'); 
+    background-size: auto;
+    background-position: left;
+    background-repeat: repeat;
+}
+/* 导航样式 */
+nav {
+    background-color: #e2e2e2;
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+
+nav ul li {
+    margin: 0;
+    padding: 0; 
+    font-size: 18px;
+}
+
+nav ul li a {
+    color: #000000;
+    font-weight: bold;
+    padding: 12px 40px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+#now{
+    padding-top: 12px;    
+    padding-right: 40px;  
+    padding-bottom: 9px; 
+    padding-left: 40px;   
+    margin: 0; 
+    border-bottom:  4px solid #861d1d; 
+}
+
+nav ul li a:hover {
+    background-color: #9c1818e8;
+    color: black;
+}
+
+/* 内容样式 */
+.content {
+    flex: 1;
+    text-align: center;
+    background-image: url('img/background.png'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:  auto 100%;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content img {
+    width: 100%;
+    object-fit: cover; 
+    border-radius: 8px;
+    margin: 10px 0;
+}
+.content a{
+    text-decoration: none;
+}
+.content p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color:rgb(0, 0, 0);
+}
+
+.content h2 {
+    font-size: 1.8em;
+    margin: 0 0 10px;
+    font-weight: bold;
+    color:rgb(0, 0, 0);
+}
