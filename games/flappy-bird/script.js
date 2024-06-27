@@ -127,7 +127,7 @@ canvas.addEventListener('touchstart', () => {
     if (gameRunning) bird.flap();
 });
 
-document.addEventListener('keyup', () => {
+document.addEventListener('keydown', () => {
     if (gameRunning) bird.flap();
 });
 
