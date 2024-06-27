@@ -14,10 +14,6 @@ let bird, pipes, score, gravity, birdLift, gameRunning, sprite;
 sprite = new Image();
 sprite.src = 'assets/SPRITES.png';
 
-document.addEventListener('DOMContentLoaded', () => {
-    ctx.drawImage(sprite, 0, 0, 144, 256, 0, 0, canvas.width, canvas.height);
-    ctx.drawImage(sprite, 146, 173, 96, 22, canvas.width / 2 - 96, canvas.height / 2 - 22 - 50, 96 * 2, 22 * 2);
-});
 class Bird {
     constructor() {
         this.x = 50;
@@ -136,4 +132,8 @@ startButton.addEventListener('click', startGame);
 // Initialize game
 sprite.onload = () => {
     startButton.style.display = 'block';
+    //draw background
+    ctx.drawImage(sprite, 0, 0, 144, 256, 0, 0, canvas.width, canvas.height);
+    //draw logo
+    ctx.drawImage(sprite, 146, 173, 96, 22, canvas.width / 2 - 96, canvas.height / 2 - 22 - 50, 96 * 2, 22 * 2);
 };
