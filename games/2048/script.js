@@ -211,6 +211,7 @@ function check() {
             for (let j = 0; j < 4; j++) {
                 let current = squares[i * 4 + j].innerHTML;
                 let right = j < 3 ? (squares[i * 4 + j + 1] ? squares[i * 4 + j + 1].innerHTML : null) : null;
+                // i*4 + j + 1不一定是下一个格子，因为有可能j = 3
                 let down = squares[i * 4 + j + 4] ? squares[i * 4 + j + 4].innerHTML : null;
                 if (current === right || current === down) {
                     gameOver = false;
